@@ -2,7 +2,6 @@
 
 # build v8 native version
 cd v8
-svn co http://gyp.googlecode.com/svn/trunk build/gyp --revision 1831
 make i18nsupport=off native
 cd ..
 
