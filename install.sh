@@ -3,7 +3,10 @@ set -v #echo on
 
 # build v8 native version
 cd v8
-CXXFLAGS="-Wno-error=tautological-undefined-compare -Wno-tautological-undefined-compare" make i18nsupport=off native
+if [ `g++ --version | grep -o LLVM` == 'LLVM' ]; then
+    export CXXFLAGS="-Wno-tautological-undefined-compare"
+fi
+make i18nsupport=off native
 cd ..
 
 outdir="`pwd`/v8/out/native"
