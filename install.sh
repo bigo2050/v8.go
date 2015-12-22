@@ -1,4 +1,5 @@
 #!/bin/bash
+set -v #echo on
 
 # build v8 native version
 cd v8
@@ -34,4 +35,4 @@ Libs: $libstdcpp $libv8_base $outdir/libv8_snapshot.a $librt" > v8.pc
 
 # let's go
 go install
-go test -v
+#go test -v
