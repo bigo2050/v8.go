@@ -2,7 +2,7 @@
 
 # build v8 native version
 cd v8
-make i18nsupport=off native
+CXXFLAGS="-Wno-error=tautological-undefined-compare -Wno-tautological-undefined-compare" make i18nsupport=off native
 cd ..
 
 outdir="`pwd`/v8/out/native"
