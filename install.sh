@@ -21,6 +21,8 @@ fi
 librt=''
 if [ `go env | grep GOHOSTOS` == 'GOHOSTOS="linux"' ]; then
 	librt='-lrt'
+    # For some reason linux (or is it GCC) puts this in a weird place
+    outdir="$outdir/obj.target/tools/gyp/"
 fi
 
 # for Mac
